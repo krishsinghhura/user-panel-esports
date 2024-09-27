@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing Tournaments</title>
+    <link rel="stylesheet" href="join.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ongoing Tournaments</h1>
+        <input type="text" id="searchBar" placeholder="Search for a tournament..." onkeyup="filterTournaments()">
+        
+        <div class="tournament-list">
+            <ul id="tournamentList">
+                <li onclick="joinTournament()">Tournament A</li>
+                <li onclick="joinTournament()">Tournament B</li>
+                <li onclick="joinTournament()">Tournament C</li>
+                <li onclick="joinTournament()">Tournament D</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to filter the tournament list
+        function filterTournaments() {
+            const input = document.getElementById('searchBar').value.toLowerCase();
+            const tournamentList = document.getElementById('tournamentList');
+            const tournaments = tournamentList.getElementsByTagName('li');
+
+            for (let i = 0; i < tournaments.length; i++) {
+                const tournament = tournaments[i].textContent || tournaments[i].innerText;
+                if (tournament.toLowerCase().indexOf(input) > -1) {
+                    tournaments[i].style.display = '';
+                } else {
+                    tournaments[i].style.display = 'none';
+                }
+            }
+        }
+
+        // JavaScript function to redirect when a tournament is clicked
+        function joinTournament() {
+            window.location.href = 'final2.html';
+        }
+    </script>
+</body>
+</html>

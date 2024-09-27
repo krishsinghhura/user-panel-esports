@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('bg.jpeg'); /* Add your background image here */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background over image */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 3em;
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc;
+}
+
+/* Image styling */
+.tournament-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Options styling */
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.option {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.option.create {
+    background-color: #00ffcc;
+}
+
+.option.join {
+    background-color: #ff00cc;
+}
+
+.option a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.option.create:hover,
+.option.join:hover {
+    transform: scale(1.05);
+}
+
+/* Join Section */
+.join-section {
+    display: none;
+    margin-top: 30px;
+}
+
+.join-section h2 {
+    color: #ff00cc;
+}
+
+#searchBar {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+}
+
+/* Tournament List Container */
+.tournament-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#tournamentList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tournamentList li {
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#tournamentList li:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}

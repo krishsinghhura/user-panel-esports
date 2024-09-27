@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Page</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Tournament</h1>
+        <img src="battle.jpeg" alt="Tournament Image" class="tournament-image">
+        <div class="options">
+            <div class="option create">
+                <a href="create.html">CREATE</a>
+            </div>
+            <div class="option join" id="joinButton">
+                <a href="join.html" onclick="showJoinSection()">JOIN</a>
+            </div>
+        </div>
+
+        <!-- Join Section (Hidden by default) -->
+        <div class="join-section" id="joinSection">
+            <h2>Ongoing Tournaments</h2>
+            <input type="text" id="searchBar" placeholder="Search for a tournament..." onkeyup="filterTournaments()">
+            
+            <!-- Tournament List Container -->
+            <div class="tournament-container">
+                <ul id="tournamentList">
+                    <li>Tournament A</li>
+                    <li>Tournament B</li>
+                    <li>Tournament C</li>
+                    <li>Tournament D</li>
+                    <li>Tournament E</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showJoinSection() {
+            const joinSection = document.getElementById('joinSection');
+            joinSection.style.display = 'flex'; // Show the join section
+        }
+
+        // Function to filter tournaments based on user input
+        function filterTournaments() {
+            const input = document.getElementById('searchBar').value.toLowerCase();
+            const tournamentList = document.getElementById('tournamentList');
+            const tournaments = tournamentList.getElementsByTagName('li');
+
+            for (let i = 0; i < tournaments.length; i++) {
+                const tournament = tournaments[i].textContent || tournaments[i].innerText;
+                if (tournament.toLowerCase().indexOf(input) > -1) {
+                    tournaments[i].style.display = '';
+                } else {
+                    tournaments[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
